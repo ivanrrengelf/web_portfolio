@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio | Ivan Rengel</title>
     <meta name="description" content="Portfolio profesional orientado a empresas: proyectos, experiencia y contacto." />
+    <link rel="canonical" href="https://www.tu-dominio.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Portfolio | Ivan Rengel" />
+    <meta property="og:title" content="Portfolio | Ivan Rengel" />
+    <meta property="og:description" content="Portfolio profesional orientado a empresas: proyectos, experiencia y contacto." />
+    <meta property="og:url" content="https://www.tu-dominio.com/" />
+    <meta property="og:image" content="https://www.tu-dominio.com/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portfolio | Ivan Rengel" />
+    <meta name="twitter:description" content="Portfolio profesional orientado a empresas: proyectos, experiencia y contacto." />
+    <meta name="twitter:image" content="https://www.tu-dominio.com/og-image.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
@@ -34,50 +46,70 @@
     </script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="bg-white text-slate-800 antialiased font-sans">
+  <body class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 antialiased font-sans">
     <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:bg-white focus:text-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:px-3 focus:py-2 focus:rounded">Saltar al contenido</a>
 
-    <header class="border-b border-slate-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 supports-[backdrop-filter]:dark:bg-slate-900/60 sticky top-0 z-50">
       <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Principal">
-        <a class="flex items-center gap-2 font-semibold text-slate-900" href="#">
+        <a class="flex items-center gap-2 font-semibold text-slate-900 dark:text-white" href="#" aria-label="Inicio">
           <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-brand-600 text-white">IR</span>
           <span>Ivan Rengel</span>
         </a>
-        <ul class="hidden md:flex items-center gap-6 text-sm text-slate-700">
-          <li><a class="hover:text-brand-600" href="#proyectos">Proyectos</a></li>
-          <li><a class="hover:text-brand-600" href="#sobre-mi">Sobre mí</a></li>
-          <li><a class="hover:text-brand-600" href="#contacto">Contacto</a></li>
+        
+        <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-600" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <ul class="hidden md:flex items-center gap-6 text-sm text-slate-700 dark:text-slate-300">
+          <li><a class="hover:text-brand-600 nav-link" href="#proyectos">Proyectos</a></li>
+          <li><a class="hover:text-brand-600 nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="hover:text-brand-600 nav-link" href="#contacto">Contacto</a></li>
         </ul>
-        <div class="flex items-center gap-2">
-          <a href="#contacto" class="inline-flex items-center rounded-md bg-brand-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600">Disponible para proyectos</a>
+        <div class="hidden md:flex items-center gap-2">
+          <a href="#contacto" class="inline-flex items-center rounded-md bg-brand-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600">Disponible para prácticas</a>
         </div>
       </nav>
+      <!-- Menú móvil -->
+      <div id="mobile-menu" class="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden" role="region" aria-label="Menú móvil">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
+          <ul class="flex flex-col gap-2 text-sm text-slate-700">
+            <li><a class="block rounded px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 nav-link" href="#proyectos">Proyectos</a></li>
+            <li><a class="block rounded px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 nav-link" href="#sobre-mi">Sobre mí</a></li>
+            <li><a class="block rounded px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 nav-link" href="#contacto">Contacto</a></li>
+            <li>
+              <a href="#contacto" class="mt-1 inline-flex w-full items-center justify-center rounded-md bg-brand-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-700">Disponible para prácticas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <main id="contenido">
       <section class="relative">
-        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50 to-white"></div>
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50 to-white dark:from-slate-900 dark:to-slate-950"></div>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid gap-10 lg:grid-cols-2 items-center">
           <div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900">Diseño y desarrollo web para empresas</h1>
-            <p class="mt-5 text-lg text-slate-600 max-w-prose">Ayudo a empresas a lanzar y escalar productos digitales con interfaces elegantes, rendimiento sólido y foco en conversión.</p>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">Estudiante de Ingeniería en Sistemas de Información</h1>
+            <p class="mt-5 text-lg text-slate-600 dark:text-slate-400 max-w-prose">Desarrollador junior con pasión por aprender y resolver problemas. Especializado en Java, SQL y Python, con capacidad de adaptación rápida y enfoque en soluciones eficientes.</p>
             <div class="mt-8 flex items-center gap-3">
               <a href="#proyectos" class="inline-flex items-center rounded-md bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-700">Ver proyectos</a>
               <a href="#contacto" class="inline-flex items-center rounded-md border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-50">Hablemos</a>
             </div>
             <div class="mt-10 flex flex-wrap items-center gap-4 text-xs text-slate-500">
-              <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-500"></span> Disponible</span>
-              <span>+5 años de experiencia</span>
-              <span>Frontend · UI · Performance</span>
+              <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-500"></span> Disponible para prácticas</span>
+              <span>3er año Universidad CEU San Pablo</span>
+              <span>Java · SQL · Python</span>
             </div>
           </div>
           <div class="relative">
-            <div class="aspect-[4/3] w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm bg-white">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Vista previa de proyectos" class="h-full w-full object-cover" />
+            <div class="aspect-[4/3] w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Vista previa de proyectos" class="h-full w-full object-cover" fetchpriority="high" decoding="async" width="1200" height="900" />
             </div>
-            <div class="pointer-events-none absolute -bottom-6 -right-6 hidden md:block rounded-lg bg-white p-4 shadow-lg ring-1 ring-slate-200">
-              <p class="text-sm font-semibold text-slate-900">Resultados</p>
-              <p class="mt-1 text-xs text-slate-500">+35% conversión · +20 Lighthouse</p>
+            <div class="pointer-events-none absolute -bottom-6 -right-6 hidden md:block rounded-lg bg-white dark:bg-slate-900 p-4 shadow-lg ring-1 ring-slate-200 dark:ring-slate-800">
+              <p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Perfil</p>
+              <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Aprendizaje rápido · Resolución de problemas</p>
             </div>
           </div>
         </div>
@@ -86,114 +118,137 @@
       <section id="proyectos" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div class="flex items-end justify-between gap-6">
           <div>
-            <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Proyectos seleccionados</h2>
-            <p class="mt-2 text-slate-600">Casos de estudio orientados a impacto de negocio.</p>
+            <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">Proyectos académicos</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Proyectos desarrollados durante mi formación universitaria.</p>
           </div>
           <a href="#" class="hidden md:inline-flex text-sm font-semibold text-brand-700 hover:text-brand-800">Ver todos</a>
         </div>
         <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Card Proyecto -->
-          <article class="group rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md focus-within:shadow-md">
+          <!-- Proyecto 1: Máquina Expendedora -->
+          <article class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm transition hover:shadow-md focus-within:shadow-md">
             <a href="#" class="block">
-              <div class="aspect-video w-full overflow-hidden rounded-t-xl">
-                <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="Proyecto 1" />
+              <div class="aspect-video w-full overflow-hidden rounded-t-xl bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
+                <div class="text-center p-6">
+                  <div class="w-16 h-16 mx-auto mb-4 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                  </div>
+                  <p class="text-sm text-slate-600 dark:text-slate-400 font-medium">Simulación Java</p>
+                </div>
               </div>
               <div class="p-4">
-                <div class="flex items-center gap-2 text-xs text-slate-500">
-                  <span class="rounded bg-slate-100 px-2 py-0.5">SaaS</span>
-                  <span class="rounded bg-slate-100 px-2 py-0.5">Next.js</span>
-                  <span class="rounded bg-slate-100 px-2 py-0.5">Tailwind</span>
+                <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Java</span>
+                  <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5">POO</span>
+                  <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Console</span>
                 </div>
-                <h3 class="mt-3 text-base font-semibold text-slate-900">Optimización funnel B2B</h3>
-                <p class="mt-1 text-sm text-slate-600">Rediseño y mejoras de performance que impulsaron la conversión.</p>
+                <h3 class="mt-3 text-base font-semibold text-slate-900 dark:text-slate-100">Simulador de Máquina Expendedora</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Aplicación de consola que simula el funcionamiento de una máquina expendedora con gestión de productos y monedas.</p>
               </div>
             </a>
           </article>
 
-          <article class="group rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md focus-within:shadow-md">
+          <!-- Proyecto 2: Base de Datos -->
+          <article class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm transition hover:shadow-md focus-within:shadow-md">
             <a href="#" class="block">
-              <div class="aspect-video w-full overflow-hidden rounded-t-xl">
-                <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://images.unsplash.com/photo-1529336953121-c9d2c655a391?q=80&w=1200&auto=format&fit=crop" alt="Proyecto 2" />
+              <div class="aspect-video w-full overflow-hidden rounded-t-xl bg-gradient-to-br from-green-50 to-emerald-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
+                <div class="text-center p-6">
+                  <div class="w-16 h-16 mx-auto mb-4 bg-green-600 rounded-lg flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                    </svg>
+                  </div>
+                  <p class="text-sm text-slate-600 dark:text-slate-400 font-medium">Base de Datos</p>
+                </div>
               </div>
               <div class="p-4">
-                <div class="flex items-center gap-2 text-xs text-slate-500">
-                  <span class="rounded bg-slate-100 px-2 py-0.5">Ecommerce</span>
-                  <span class="rounded bg-slate-100 px-2 py-0.5">React</span>
-                  <span class="rounded bg-slate-100 px-2 py-0.5">A/B Testing</span>
+                <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5">SQL</span>
+                  <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5">MySQL</span>
+                  <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Consultas</span>
                 </div>
-                <h3 class="mt-3 text-base font-semibold text-slate-900">Checkout más rápido</h3>
-                <p class="mt-1 text-sm text-slate-600">Simplificación del flujo y reducción del tiempo de compra.</p>
+                <h3 class="mt-3 text-base font-semibold text-slate-900 dark:text-slate-100">Sistema de Gestión Académica</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Base de datos para gestión de estudiantes, profesores y materias con consultas complejas y relaciones.</p>
               </div>
             </a>
           </article>
 
-          <article class="group rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md focus-within:shadow-md">
+          <!-- Proyecto 3: Python -->
+          <article class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm transition hover:shadow-md focus-within:shadow-md">
             <a href="#" class="block">
-              <div class="aspect-video w-full overflow-hidden rounded-t-xl">
-                <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://images.unsplash.com/photo-1551281044-8f785ba67e45?q=80&w=1200&auto=format&fit=crop" alt="Proyecto 3" />
+              <div class="aspect-video w-full overflow-hidden rounded-t-xl bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center">
+                <div class="text-center p-6">
+                  <div class="w-16 h-16 mx-auto mb-4 bg-yellow-600 rounded-lg flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                  </div>
+                  <p class="text-sm text-slate-600 dark:text-slate-400 font-medium">Análisis de Datos</p>
+                </div>
               </div>
               <div class="p-4">
-                <div class="flex items-center gap-2 text-xs text-slate-500">
-                  <span class="rounded bg-slate-100 px-2 py-0.5">Landing</span>
-                  <span class="rounded bg-slate-100 px-2 py-0.5">SEO</span>
-                  <span class="rounded bg-slate-100 px-2 py-0.5">Analytics</span>
+                <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Python</span>
+                  <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Pandas</span>
+                  <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5">R</span>
                 </div>
-                <h3 class="mt-3 text-base font-semibold text-slate-900">Lead gen B2B</h3>
-                <p class="mt-1 text-sm text-slate-600">Estrategia SEO + UX para captar leads cualificados.</p>
+                <h3 class="mt-3 text-base font-semibold text-slate-900 dark:text-slate-100">Análisis Estadístico</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Proyectos de análisis de datos con Python y R para procesamiento y visualización de información.</p>
               </div>
             </a>
           </article>
         </div>
       </section>
 
-      <section id="sobre-mi" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200">
+      <section id="sobre-mi" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 dark:border-slate-800">
         <div class="grid gap-8 lg:grid-cols-3">
           <div>
-            <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Sobre mí</h2>
-            <p class="mt-2 text-slate-600">Especialista en frontend con foco en negocio.</p>
+            <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">Sobre mí</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Estudiante de Ingenieria en sistemas de informacion.</p>
           </div>
           <div class="lg:col-span-2">
-            <div class="prose prose-slate max-w-none">
-              <p>Trabajo con equipos de producto para construir interfaces cuidadas, accesibles y rápidas. Me integro en procesos existentes, aportando criterios de UX, performance y calidad.</p>
+            <div class="prose prose-slate dark:prose-invert max-w-none">
+              <p>Estudiante de 3er año de Ingeniería en Sistemas de Información en la Universidad CEU San Pablo. Me caracterizo por mi capacidad de aprendizaje rápido y mi determinación para enfrentar desafíos técnicos. Busco oportunidades para aplicar mis conocimientos en Java, SQL y Python en proyectos reales.</p>
             </div>
             <ul class="mt-6 grid gap-3 sm:grid-cols-2 text-sm text-slate-700">
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Next.js, React, TypeScript</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Tailwind CSS, Design Systems</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> SEO técnico y analítica</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Accesibilidad y rendimiento</li>
+              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Java (POO, Spring Boot)</li>
+              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> SQL (Consultas, Bases de datos)</li>
+              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Python (Fundamentos, librerías)</li>
+              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> C, R (Programación estructurada)</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section id="contacto" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div class="rounded-2xl border border-slate-200 bg-gradient-to-br from-brand-50 to-white p-8 md:p-12">
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-gradient-to-br from-brand-50 to-white dark:from-slate-900 dark:to-slate-950 p-8 md:p-12">
           <div class="grid gap-6 md:grid-cols-2 items-center">
             <div>
-              <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Hablemos de tu próximo proyecto</h2>
-              <p class="mt-2 text-slate-600">Agenda una llamada o escríbeme y te comparto ideas y referencias.</p>
+              <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">Hablemos de oportunidades</h2>
+              <p class="mt-2 text-slate-600 dark:text-slate-400">Busco prácticas o proyectos donde pueda aplicar mis conocimientos y seguir aprendiendo.</p>
             </div>
             <div class="flex md:justify-end gap-3">
-              <a href="mailto:tuemail@empresa.com" class="inline-flex items-center rounded-md bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">Contactar por email</a>
-              <a href="#" class="inline-flex items-center rounded-md border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-50">Descargar CV</a>
+              <a href="mailto:ivanrrengelf@gmail.com" class="inline-flex items-center rounded-md bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">Contactar por email</a>
+              <a href="#" class="inline-flex items-center rounded-md border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800">Descargar CV</a>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-slate-200 py-8">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-        <p>© <span id="year"></span> Nombre Apellido. Todos los derechos reservados.</p>
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-8">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
+        <p>© <span id="year"></span> Ivan Rengel. Todos los derechos reservados.</p>
         <div class="flex items-center gap-4">
-          <a class="hover:text-slate-700" href="#">LinkedIn</a>
-          <a class="hover:text-slate-700" href="#">GitHub</a>
-          <a class="hover:text-slate-700" href="#">X</a>
+          <a class="hover:text-slate-700 dark:hover:text-slate-300" href="#">LinkedIn</a>
+          <a class="hover:text-slate-700 dark:hover:text-slate-300" href="#">GitHub</a>
+          <a class="hover:text-slate-700 dark:hover:text-slate-300" href="#">X</a>
         </div>
       </div>
     </footer>
 
-    <script src="./main.js"></script>
+    <script src="./main.js" defer></script>
   </body>
   </html>
 

@@ -1,3 +1,15 @@
+/* Refinamientos globales y utilidades de accesibilidad */
+:root { --radius: 12px; }
+
+.prose p + p { margin-top: 0.75rem; }
+.prose a { text-decoration: underline; text-underline-offset: 2px; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.not-sr-only { position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal; }
+
+/* Estado activo del enlace de navegación */
+.nav-link.active { color: rgb(44 134 255); font-weight: 600; }
+
 /* Pequeños refinamientos globales */
 :root {
   --radius: 12px;
