@@ -10,6 +10,11 @@
 /* Estado activo del enlace de navegación */
 .nav-link.active { color: rgb(44 134 255); font-weight: 600; }
 
+/* Scroll suave para navegación */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Pequeños refinamientos globales */
 :root {
   --radius: 12px;

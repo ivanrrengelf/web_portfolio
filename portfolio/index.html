@@ -63,8 +63,8 @@
         </button>
 
         <ul class="hidden md:flex items-center gap-6 text-sm text-slate-700 dark:text-slate-300">
-          <li><a class="hover:text-brand-600 nav-link" href="#proyectos">Proyectos</a></li>
           <li><a class="hover:text-brand-600 nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="hover:text-brand-600 nav-link" href="#proyectos">Proyectos</a></li>
           <li><a class="hover:text-brand-600 nav-link" href="#contacto">Contacto</a></li>
         </ul>
         <div class="hidden md:flex items-center gap-2">
@@ -75,8 +75,8 @@
       <div id="mobile-menu" class="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden" role="region" aria-label="Menú móvil">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
           <ul class="flex flex-col gap-2 text-sm text-slate-700">
-            <li><a class="block rounded px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 nav-link" href="#proyectos">Proyectos</a></li>
             <li><a class="block rounded px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 nav-link" href="#sobre-mi">Sobre mí</a></li>
+            <li><a class="block rounded px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 nav-link" href="#proyectos">Proyectos</a></li>
             <li><a class="block rounded px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 nav-link" href="#contacto">Contacto</a></li>
             <li>
               <a href="#contacto" class="mt-1 inline-flex w-full items-center justify-center rounded-md bg-brand-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-700">Disponible para prácticas</a>
@@ -93,10 +93,6 @@
           <div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">Estudiante de Ingeniería en Sistemas de Información</h1>
             <p class="mt-5 text-lg text-slate-600 dark:text-slate-400 max-w-prose">Desarrollador junior con pasión por aprender y resolver problemas. Especializado en Java, SQL y Python, con capacidad de adaptación rápida y enfoque en soluciones eficientes.</p>
-            <div class="mt-8 flex items-center gap-3">
-              <a href="#proyectos" class="inline-flex items-center rounded-md bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-700">Ver proyectos</a>
-              <a href="#contacto" class="inline-flex items-center rounded-md border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-50">Hablemos</a>
-            </div>
             <div class="mt-10 flex flex-wrap items-center gap-4 text-xs text-slate-500">
               <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-500"></span> Disponible para prácticas</span>
               <span>3er año Universidad CEU San Pablo</span>
@@ -115,7 +111,27 @@
         </div>
       </section>
 
-      <section id="proyectos" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <section id="sobre-mi" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-16">
+        <div class="grid gap-8 lg:grid-cols-3">
+          <div>
+            <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">Sobre mí</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Estudiante de Ingenieria en sistemas de informacion.</p>
+          </div>
+          <div class="lg:col-span-2">
+            <div class="prose prose-slate dark:prose-invert max-w-none">
+              <p>Estudiante de 3er año de Ingeniería en Sistemas de Información en la Universidad CEU San Pablo. Me caracterizo por mi capacidad de aprendizaje rápido y mi determinación para enfrentar desafíos técnicos. Busco oportunidades para aplicar mis conocimientos en Java, SQL y Python en proyectos reales.</p>
+            </div>
+            <ul class="mt-6 grid gap-3 sm:grid-cols-2 text-sm text-slate-700">
+              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Java (POO, Spring Boot)</li>
+              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> SQL (Consultas, Bases de datos)</li>
+              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Python (Fundamentos, librerías)</li>
+              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> C, R (Programación estructurada)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="proyectos" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 dark:border-slate-800">
         <div class="flex items-end justify-between gap-6">
           <div>
             <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">Proyectos académicos</h2>
@@ -198,26 +214,6 @@
               </div>
             </a>
           </article>
-        </div>
-      </section>
-
-      <section id="sobre-mi" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 dark:border-slate-800">
-        <div class="grid gap-8 lg:grid-cols-3">
-          <div>
-            <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">Sobre mí</h2>
-            <p class="mt-2 text-slate-600 dark:text-slate-400">Estudiante de Ingenieria en sistemas de informacion.</p>
-          </div>
-          <div class="lg:col-span-2">
-            <div class="prose prose-slate dark:prose-invert max-w-none">
-              <p>Estudiante de 3er año de Ingeniería en Sistemas de Información en la Universidad CEU San Pablo. Me caracterizo por mi capacidad de aprendizaje rápido y mi determinación para enfrentar desafíos técnicos. Busco oportunidades para aplicar mis conocimientos en Java, SQL y Python en proyectos reales.</p>
-            </div>
-            <ul class="mt-6 grid gap-3 sm:grid-cols-2 text-sm text-slate-700">
-              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Java (POO, Spring Boot)</li>
-              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> SQL (Consultas, Bases de datos)</li>
-              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> Python (Fundamentos, librerías)</li>
-              <li class="flex items-center gap-2 text-slate-800 dark:text-slate-300"><span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span> C, R (Programación estructurada)</li>
-            </ul>
-          </div>
         </div>
       </section>
 
