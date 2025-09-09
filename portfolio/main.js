@@ -69,6 +69,90 @@ document.getElementById('year').textContent = new Date().getFullYear();
   map.forEach((el) => observer.observe(el));
 })();
 
+// Copiar email al portapapeles
+(function () {
+  const copyButton = document.getElementById('copy-email');
+  if (!copyButton) return;
+
+  const email = 'ivanrrengelf@gmail.com';
+
+  copyButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      
+      // Feedback visual
+      const originalText = copyButton.textContent;
+      copyButton.textContent = '¡Email copiado!';
+      copyButton.classList.add('bg-green-600', 'hover:bg-green-700');
+      copyButton.classList.remove('bg-brand-600', 'hover:bg-brand-700');
+      
+      // Restaurar después de 2 segundos
+      setTimeout(() => {
+        copyButton.textContent = originalText;
+        copyButton.classList.remove('bg-green-600', 'hover:bg-green-700');
+        copyButton.classList.add('bg-brand-600', 'hover:bg-brand-700');
+      }, 2000);
+      
+    } catch (err) {
+      // Fallback para navegadores que no soportan clipboard API
+      const textArea = document.createElement('textarea');
+      textArea.value = email;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      
+      // Feedback visual
+      const originalText = copyButton.textContent;
+      copyButton.textContent = '¡Email copiado!';
+      copyButton.classList.add('bg-green-600', 'hover:bg-green-700');
+      copyButton.classList.remove('bg-brand-600', 'hover:bg-brand-700');
+      
+      setTimeout(() => {
+        copyButton.textContent = originalText;
+        copyButton.classList.remove('bg-green-600', 'hover:bg-green-700');
+        copyButton.classList.add('bg-brand-600', 'hover:bg-brand-700');
+      }, 2000);
+    }
+  });
+})();
+
+// Header compacto al hacer scroll
+(function () {
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateHeader() {
+    const scrollY = window.scrollY;
+    
+    if (scrollY > 100) {
+      // Mostrar header compacto
+      header.classList.add('header-compact');
+      if (document.documentElement.classList.contains('dark')) {
+        header.classList.add('dark');
+      }
+    } else {
+      // Mostrar header normal
+      header.classList.remove('header-compact', 'dark');
+    }
+    
+    lastScrollY = scrollY;
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestTick, { passive: true });
+})();
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
 

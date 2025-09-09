@@ -15,6 +15,63 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Header compacto cuando se hace scroll */
+.header-compact {
+  position: fixed !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  left: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  height: auto !important;
+  padding: 0.5rem !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  z-index: 50 !important;
+  transform: translateY(0) !important;
+  transition: all 0.3s ease !important;
+}
+
+.header-compact.dark {
+  background: rgba(15, 23, 42, 0.95) !important;
+}
+
+.header-compact nav {
+  height: auto !important;
+  padding: 0 !important;
+}
+
+.header-compact .nav-links {
+  display: flex !important;
+  gap: 0.5rem !important;
+  margin: 0 !important;
+}
+
+.header-compact .nav-links li {
+  margin: 0 !important;
+}
+
+.header-compact .nav-links a {
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  border-radius: 0.5rem !important;
+  background: transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+.header-compact .nav-links a:hover {
+  background: rgba(44, 134, 255, 0.1) !important;
+  color: rgb(44, 134, 255) !important;
+}
+
+.header-compact .logo,
+.header-compact .mobile-menu-button,
+.header-compact .cta-button {
+  display: none !important;
+}
+
 /* Pequeños refinamientos globales */
 :root {
   --radius: 12px;
